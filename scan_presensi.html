@@ -271,13 +271,23 @@
     }
 
     // 4. Selesai
+// 4. Selesai
     function selesai() {
         const confirmEnd = confirm("Selesaikan presensi dan kirim laporan?");
         if(confirmEnd) {
+            // Cek parameter URL untuk menentukan arah kembali
+            const urlParams = new URLSearchParams(window.location.search);
+            const type = urlParams.get('type');
+
             alert("Laporan Terkirim! \nNotifikasi Bolos (Alpha) akan dikirim ke BP/BK.");
-            // Redirect ke dashboard
-            // Kembali ke jurnal dengan parameter url '?status=scanned'
-window.location.href = "journal_pengganti.html?status=scanned";
+            
+            if (type === 'guru') {
+                // Jika dari Guru Mapel, kembali ke Jurnal Guru
+                window.location.href = "journal_guru.html?status=scanned";
+            } else {
+                // Default (atau Piket), kembali ke Jurnal Pengganti
+                window.location.href = "journal_pengganti.html?status=scanned";
+            }
         }
     }
 </script>
