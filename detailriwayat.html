@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aset Figma - Detail Riwayat</title>
+    <style>
+        /* Reset & Base Style */
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background-color: #333; }
+        
+        /* Container HP */
+        .mobile-container { 
+            max-width: 480px; 
+            margin: 0 auto; 
+            background: rgba(0,0,0,0.5); /* Simulasi background gelap overlay */
+            min-height: 100vh; 
+            position: relative; 
+            display: flex;
+            align-items: flex-end; /* Posisi di bawah */
+        }
+
+        /* --- STYLE POPUP --- */
+        .bottom-sheet {
+            background: white; 
+            width: 100%; 
+            border-top-left-radius: 25px; 
+            border-top-right-radius: 25px;
+            height: 90vh; /* Tinggi popup */
+            padding: 25px; 
+            box-sizing: border-box;
+            display: flex; 
+            flex-direction: column;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Header Popup */
+        .sheet-header { 
+            display: flex; justify-content: space-between; align-items: flex-start; 
+            margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; 
+        }
+        .sheet-title h3 { margin: 0 0 5px 0; font-size: 18px; color: #333; }
+        .sheet-title span { font-size: 13px; color: #666; font-weight: 500; }
+        .close-btn { 
+            background: #f0f0f0; border: none; width: 30px; height: 30px; 
+            border-radius: 50%; font-size: 16px; color: #555; cursor: pointer; 
+        }
+
+        /* Konten Scrollable */
+        .sheet-content { overflow-y: auto; flex: 1; padding-bottom: 20px; }
+
+        /* Section Detail */
+        .detail-section { margin-bottom: 25px; }
+        .detail-label { 
+            font-size: 11px; font-weight: bold; color: #888; 
+            margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .detail-value { 
+            font-size: 14px; color: #333; line-height: 1.6; 
+            background: #f8f9fa; padding: 15px; border-radius: 10px; border: 1px solid #eee;
+        }
+        
+        /* Header Tabel Rekap */
+        .rekap-header {
+            display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;
+        }
+        .rekap-stats { font-size: 12px; background: #e9ecef; padding: 4px 10px; border-radius: 15px; }
+        
+        /* Tabel Siswa */
+        .student-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        .student-table th { 
+            text-align: left; color: #888; font-weight: normal; 
+            padding: 10px; border-bottom: 1px solid #ddd; font-size: 12px;
+        }
+        .student-table td { padding: 12px 10px; border-bottom: 1px solid #f5f5f5; }
+        .student-table tr:last-child td { border-bottom: none; }
+        
+        /* Status Dot */
+        .status-badge { display: flex; align-items: center; justify-content: flex-end; gap: 6px; }
+        .status-dot { height: 8px; width: 8px; border-radius: 50%; display: inline-block; }
+        .dot-green { background: #28a745; box-shadow: 0 0 0 2px #d4edda; }
+        .dot-red { background: #dc3545; box-shadow: 0 0 0 2px #f8d7da; }
+
+    </style>
+</head>
+<body>
+
+<div class="mobile-container">
+    
+    <div class="bottom-sheet">
+        
+        <div class="sheet-header">
+            <div class="sheet-title">
+                <h3 style="color: #d35400;">Piket: B. Inggris (9B)</h3>
+                <span>Senin, 30 Oktober • 07:00 - 08:20</span>
+            </div>
+            <button class="close-btn">✕</button>
+        </div>
+
+        <div class="sheet-content">
+            
+            <div class="detail-section">
+                <div class="detail-label">Materi & Catatan</div>
+                <div class="detail-value">
+                    <div style="margin-bottom: 10px;">
+                        <strong style="color:#333;">Materi:</strong><br>
+                        Mengerjakan LKS Halaman 45 (Tugas dr Bu Siti)
+                    </div>
+                    <div>
+                        <strong style="color:#333;">Catatan:</strong><br>
+                        Menggantikan Bu Siti yang sakit. Kelas aman terkendali.
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <div class="rekap-header">
+                    <div class="detail-label" style="margin:0;">Rekap Presensi</div>
+                    <div class="rekap-stats">
+                        Hadir: <b style="color:#28a745">30</b> | Absen: <b style="color:#dc3545">2</b>
+                    </div>
+                </div>
+                
+                <div class="detail-value" style="background:white; padding:0; border:1px solid #eee;">
+                    <table class="student-table">
+                        <thead>
+                            <tr>
+                                <th>Nama Siswa</th>
+                                <th style="text-align:right;">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>Eko Prasetyo</b></td>
+                                <td style="text-align:right;">
+                                    <div class="status-badge">
+                                        <span class="status-dot dot-green"></span> Hadir
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><b>Fani Rahma</b></td>
+                                <td style="text-align:right;">
+                                    <div class="status-badge">
+                                        <span class="status-dot dot-red"></span> Alpha
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <script>
+                                for(let i=3; i<=30; i++) {
+                                    document.write(`
+                                    <tr>
+                                        <td>Siswa 9B-${i}</td>
+                                        <td style="text-align:right;">
+                                            <div class="status-badge">
+                                                <span class="status-dot dot-green"></span> Hadir
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    `);
+                                }
+                            </script>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

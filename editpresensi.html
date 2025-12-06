@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aset Figma - Daftar Siswa</title>
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; overflow: hidden; }
+        .mobile-container { max-width: 480px; margin: 0 auto; background: white; min-height: 100vh; position: relative; }
+
+        /* Background blur untuk simulasi bahwa ini di atas kamera (Opsional) */
+        .camera-view-bg {
+            position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+            background: #222 url('https://img.freepik.com/free-photo/blurred-classroom-background_1253-294.jpg?w=740') no-repeat center center;
+            background-size: cover;
+            filter: blur(4px); /* Efek blur di belakang modal */
+            z-index: 1;
+        }
+
+        /* MODAL MANUAL LIST (DIPAKSA MUNCUL) */
+        .manual-list-modal {
+            position: absolute; top: 0; bottom: 0; left: 0; right: 0;
+            background: white; 
+            z-index: 30; 
+            /* UBAH DARI NONE KE FLEX AGAR LANGSUNG MUNCUL */
+            display: flex; 
+            flex-direction: column;
+        }
+
+        .modal-header { padding: 20px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
+        .modal-content { flex: 1; overflow-y: auto; padding: 0 20px; }
+        
+        .student-row {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 0; border-bottom: 1px solid #f5f5f5;
+        }
+        .st-name { font-weight: bold; font-size: 14px; }
+        .st-nis { font-size: 12px; color: #888; }
+        
+        /* Status Toggles */
+        .status-options { display: flex; gap: 5px; }
+        .badge { padding: 5px 10px; border-radius: 15px; font-size: 10px; cursor: pointer; border: 1px solid #eee; }
+        
+        /* Warna Status */
+        .badge.active-h { background: #d4edda; color: #155724; border-color: #c3e6cb; } /* Hadir */
+        .badge.active-s { background: #fff3cd; color: #856404; border-color: #ffeeba; } /* Sakit */
+        .badge.active-i { background: #d1ecf1; color: #0c5460; border-color: #bee5eb; } /* Izin */
+        .badge.active-a { background: #f8d7da; color: #721c24; border-color: #f5c6cb; } /* Alpha */
+
+        .btn-finish {
+            width: 100%; background: #0056b3; color: white; border: none; padding: 12px;
+            border-radius: 10px; font-weight: bold; cursor: pointer; margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="mobile-container">
+    
+    <div class="camera-view-bg"></div>
+
+    <div class="manual-list-modal" id="manualModal">
+        <div class="modal-header">
+            <h3>Daftar Siswa (7A)</h3>
+            <button style="background:none; border:none; font-size:24px;">✕</button>
+        </div>
+        
+        <div class="modal-content">
+            
+            <div class="student-row">
+                <div>
+                    <div class="st-name">1. Ahmad Dani</div>
+                    <div class="st-nis">NIS: 2331001</div>
+                </div>
+                <div class="status-options">
+                    <span class="badge active-h">H</span>
+                </div>
+            </div>
+
+            <div class="student-row">
+                <div>
+                    <div class="st-name">2. Citra Lestari</div>
+                    <div class="st-nis">NIS: 2331002</div>
+                </div>
+                <div class="status-options">
+                    <span class="badge">H</span>
+                    <span class="badge active-s">S</span> <span class="badge">I</span>
+                    <span class="badge">A</span>
+                </div>
+            </div>
+
+             <div class="student-row">
+                <div>
+                    <div class="st-name">3. Doni Kurniawan</div>
+                    <div class="st-nis">NIS: 2331003</div>
+                </div>
+                <div class="status-options">
+                    <span class="badge">H</span>
+                    <span class="badge">S</span>
+                    <span class="badge">I</span>
+                    <span class="badge active-a">A</span> </div>
+            </div>
+            
+            <button class="btn-finish">Simpan Perubahan</button>
+            <br><br>
+
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
