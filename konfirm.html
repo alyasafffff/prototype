@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert Konfirmasi</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #333; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.6); z-index: 100;
+            display: flex; justify-content: center; align-items: center;
+        }
+
+        .custom-alert-box {
+            background: white; width: 100%; max-width: 320px;
+            border-radius: 20px; padding: 30px 25px;
+            text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        /* Ikon Tanya (Biru) */
+        .alert-icon {
+            width: 70px; height: 70px; border-radius: 50%;
+            margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;
+            font-size: 35px;
+            background: #e3f2fd; color: #0056b3; 
+            border: 3px solid #ffffff; box-shadow: 0 0 0 5px #e3f2fd;
+        }
+
+        .alert-title { font-size: 20px; font-weight: bold; color: #333; margin-bottom: 10px; }
+        .alert-message { font-size: 14px; color: #666; line-height: 1.5; margin-bottom: 25px; }
+
+        /* Dua Tombol Aksi */
+        .alert-actions { display: flex; gap: 10px; justify-content: center; }
+        
+        .alert-btn {
+            flex: 1; padding: 12px; border-radius: 10px; border: none;
+            font-weight: bold; font-size: 14px; cursor: pointer;
+        }
+
+        .btn-cancel { background: #f0f2f5; color: #555; }
+        .btn-yes { background: #0056b3; color: white; }
+    </style>
+</head>
+<body>
+
+    <div class="modal-overlay">
+        <div class="custom-alert-box">
+            <div class="alert-icon">?</div>
+            <div class="alert-title">Kirim Laporan?</div>
+            <div class="alert-message">Pastikan data materi dan presensi siswa sudah benar sebelum dikirim.</div>
+            <div class="alert-actions">
+                <button class="alert-btn btn-cancel">Batal</button>
+                <button class="alert-btn btn-yes">Ya, Kirim</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

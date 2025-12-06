@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert Gagal</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #333; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.6); z-index: 100;
+            display: flex; justify-content: center; align-items: center;
+        }
+
+        .custom-alert-box {
+            background: white; width: 100%; max-width: 320px;
+            border-radius: 20px; padding: 30px 25px;
+            text-align: center; box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        /* Ikon Gagal (Merah) */
+        .alert-icon {
+            width: 70px; height: 70px; border-radius: 50%;
+            margin: 0 auto 20px; display: flex; align-items: center; justify-content: center;
+            font-size: 35px;
+            background: #fdecea; color: #dc3545; 
+            border: 3px solid #ffffff; box-shadow: 0 0 0 5px #fdecea;
+        }
+
+        .alert-title { font-size: 20px; font-weight: bold; color: #333; margin-bottom: 10px; }
+        .alert-message { font-size: 14px; color: #666; line-height: 1.5; margin-bottom: 25px; }
+
+        /* Tombol Coba Lagi */
+        .alert-btn {
+            width: 100%; padding: 12px; border-radius: 10px; border: none;
+            font-weight: bold; font-size: 14px; cursor: pointer;
+            background: #dc3545; color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="modal-overlay">
+        <div class="custom-alert-box">
+            <div class="alert-icon">✕</div>
+            <div class="alert-title">Gagal Mengirim</div>
+            <div class="alert-message">Koneksi internet terputus. Silakan periksa jaringan Anda dan coba lagi.</div>
+            <button class="alert-btn">Coba Lagi</button>
+        </div>
+    </div>
+
+</body>
+</html>
