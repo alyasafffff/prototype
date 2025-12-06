@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bantuan - SMPN 2 Prigen</title>
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; }
+        .mobile-container { max-width: 480px; margin: 0 auto; background: white; min-height: 100vh; position: relative; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+
+        /* HEADER */
+        .header {
+            background: white; padding: 15px 20px; 
+            border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 15px;
+            position: sticky; top: 0; z-index: 10;
+        }
+        .back-btn { font-size: 24px; cursor: pointer; text-decoration: none; color: #333; }
+        .header h2 { margin: 0; font-size: 18px; color: #333; }
+
+        /* CONTENT */
+        .content { padding: 20px; padding-bottom: 50px; }
+
+        .help-section-title {
+            font-size: 14px; font-weight: bold; color: #0056b3; 
+            margin: 20px 0 10px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+
+        /* ACCORDION STYLE (Buka Tutup) */
+        details {
+            background: white; border: 1px solid #eee; border-radius: 8px; 
+            margin-bottom: 10px; overflow: hidden; transition: 0.3s;
+        }
+        details[open] { border-color: #bbdefb; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        
+        summary {
+            padding: 15px; cursor: pointer; font-weight: 600; font-size: 14px; color: #333;
+            list-style: none; display: flex; justify-content: space-between; align-items: center;
+        }
+        summary::-webkit-details-marker { display: none; }
+        summary:after { content: '+'; font-size: 18px; color: #888; font-weight: bold; }
+        details[open] summary:after { content: '-'; color: #0056b3; }
+        
+        .faq-content {
+            padding: 0 15px 15px; font-size: 13px; color: #555; line-height: 1.6; border-top: 1px solid #f0f0f0;
+        }
+        .faq-content ol { padding-left: 20px; margin: 10px 0; }
+        .faq-content li { margin-bottom: 5px; }
+
+        /* CONTACT SUPPORT CARD */
+        .support-card {
+            background: #e3f2fd; border: 1px dashed #2196f3; border-radius: 10px;
+            padding: 20px; text-align: center; margin-top: 30px;
+        }
+        .support-icon { font-size: 30px; margin-bottom: 10px; }
+        .btn-wa {
+            display: inline-block; margin-top: 10px; background: #25d366; color: white;
+            padding: 8px 15px; border-radius: 20px; text-decoration: none; font-weight: bold; font-size: 13px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="mobile-container">
+    
+    <div class="header">
+        <a href="javascript:history.back()" class="back-btn">←</a> 
+        <h2>Pusat Bantuan</h2>
+    </div>
+
+    <div class="content">
+        
+        <div class="help-section-title">📚 Presensi & KBM</div>
+
+        <details>
+            <summary>Bagaimana alur mengisi jurnal?</summary>
+            <div class="faq-content">
+                <ol>
+                    <li>Pilih jadwal kelas di Beranda.</li>
+                    <li>Isi <b>Materi</b> dan <b>Catatan</b> KBM terlebih dahulu.</li>
+                    <li>Klik tombol <b>Scan QR</b>.</li>
+                    <li>Setelah scan selesai, tekan tombol <b>Kirim Laporan</b>.</li>
+                </ol>
+            </div>
+        </details>
+
+        <details>
+            <summary>Siswa lupa membawa Kartu QR?</summary>
+            <div class="faq-content">
+                Tenang Bapak/Ibu. Di halaman Scan, klik tombol <b>"📋 Cek Daftar / Edit"</b>. Cari nama siswa tersebut, lalu ubah statusnya secara manual menjadi <b>Hadir (H)</b>.
+            </div>
+        </details>
+
+        <details>
+            <summary>Bagaimana jika Internet mati?</summary>
+            <div class="faq-content">
+                Aplikasi membutuhkan koneksi internet untuk mengirim data real-time ke BP/BK. Pastikan Anda memiliki kuota atau terhubung ke WiFi Sekolah (SMPN2_GURU).
+            </div>
+        </details>
+
+        <div class="help-section-title">🛡️ Tugas Guru Piket</div>
+
+        <details>
+            <summary>Kapan notifikasi "Kelas Kosong" muncul?</summary>
+            <div class="faq-content">
+                Sistem akan mengirim peringatan jika Guru Mata Pelajaran belum mengisi jurnal <b>lebih dari 15 menit</b> sejak jam dimulai.
+            </div>
+        </details>
+
+        <details>
+            <summary>Apa yang harus dilakukan saat ada Alert?</summary>
+            <div class="faq-content">
+                <ol>
+                    <li>Buka dashboard Piket.</li>
+                    <li>Klik tombol <b>"Ambil Alih"</b> pada kelas yang bermasalah.</li>
+                    <li>Segera menuju kelas tersebut.</li>
+                    <li>Lakukan presensi siswa dan berikan tugas pengganti.</li>
+                </ol>
+            </div>
+        </details>
+
+        <details>
+            <summary>Kenapa tombol "Ambil Alih" tidak bisa diklik?</summary>
+            <div class="faq-content">
+                Jika tombol berwarna abu-abu, artinya kelas tersebut <b>sudah diambil alih</b> oleh Guru Piket lain yang bertugas hari ini. Anda tidak perlu menanganinya.
+            </div>
+        </details>
+
+        <div class="help-section-title">⚙️ Akun & Keamanan</div>
+
+        <details>
+            <summary>Lupa Password Akun?</summary>
+            <div class="faq-content">
+                Silakan hubungi <b>Admin Tata Usaha (TU)</b> untuk melakukan reset password akun Anda.
+            </div>
+        </details>
+
+        <div class="support-card">
+            <div class="support-icon">👨‍💻</div>
+            <div style="font-weight:bold; color:#0056b3;">Butuh Bantuan Teknis?</div>
+            <p style="font-size:12px; color:#555; margin:5px 0;">Hubungi Tim IT / Admin Sekolah jika aplikasi mengalami kendala.</p>
+            <a href="#" class="btn-wa">Chat WhatsApp Admin</a>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Aplikasi - SMPN 2 Prigen</title>
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; }
+        .mobile-container { max-width: 480px; margin: 0 auto; background: white; min-height: 100vh; position: relative; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+
+        /* HEADER */
+        .header {
+            background: white; padding: 15px 20px; 
+            border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 15px;
+            position: sticky; top: 0; z-index: 10;
+        }
+        .back-btn { font-size: 24px; cursor: pointer; text-decoration: none; color: #333; }
+        .header h2 { margin: 0; font-size: 18px; color: #333; }
+
+        /* LOGO & VERSION SECTION */
+        .app-branding {
+            text-align: center; padding: 40px 20px; background: linear-gradient(135deg, #e3f2fd, #ffffff);
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .app-logo {
+            width: 80px; height: 80px; background: #0056b3; color: white;
+            border-radius: 20px; display: flex; align-items: center; justify-content: center;
+            font-size: 40px; margin: 0 auto 15px; box-shadow: 0 5px 15px rgba(0, 86, 179, 0.2);
+        }
+        .app-name { font-size: 20px; font-weight: bold; color: #333; margin: 0; }
+        .app-version { font-size: 13px; color: #888; margin-top: 5px; background: #eee; padding: 2px 8px; border-radius: 10px; display: inline-block; }
+
+        /* CONTENT */
+        .content { padding: 20px; padding-bottom: 50px; }
+        
+        .section-title { font-size: 14px; font-weight: bold; color: #0056b3; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+        
+        .info-card {
+            background: white; border: 1px solid #eee; border-radius: 10px; padding: 15px;
+            margin-bottom: 25px; font-size: 14px; line-height: 1.6; color: #555;
+            text-align: justify;
+        }
+
+        /* FEATURE LIST */
+        .feature-list { list-style: none; padding: 0; margin: 0; }
+        .feature-list li {
+            display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start;
+        }
+        .check-icon { color: #28a745; font-weight: bold; }
+
+        /* DEVELOPER CREDIT */
+        .dev-card {
+            text-align: center; background: #f8f9fa; padding: 20px; border-radius: 10px; border: 1px dashed #ddd;
+        }
+        .dev-name { font-weight: bold; color: #333; margin-top: 5px; }
+        .dev-nim { font-size: 12px; color: #888; }
+
+        /* FOOTER */
+        .footer-copy { text-align: center; font-size: 11px; color: #aaa; margin-top: 30px; }
+
+    </style>
+</head>
+<body>
+
+<div class="mobile-container">
+    
+    <div class="header">
+        <a href="javascript:history.back()" class="back-btn">←</a> 
+        <h2>Tentang Aplikasi</h2>
+    </div>
+
+    <div class="app-branding">
+        <div class="app-logo">🏫</div>
+        <h1 class="app-name">Sistem Monitoring KBM</h1>
+        <div class="app-version">Versi 1.0.2 (Beta)</div>
+    </div>
+
+    <div class="content">
+        
+        <div class="section-title">Deskripsi</div>
+        <div class="info-card">
+            Aplikasi ini dirancang untuk memodernisasi sistem presensi dan pemantauan Kegiatan Belajar Mengajar (KBM) di <b>SMPN 2 Prigen</b>.
+            <br><br>
+            Tujuannya adalah memastikan disiplin siswa, mengurangi jam kosong, dan memberikan laporan real-time kepada pihak sekolah.
+        </div>
+
+        <div class="section-title">Fitur Unggulan</div>
+        <div class="info-card">
+            <ul class="feature-list">
+                <li><span class="check-icon">✓</span> Presensi Siswa Cepat via QR Code</li>
+                <li><span class="check-icon">✓</span> Deteksi Otomatis Siswa Bolos (Alpha)</li>
+                <li><span class="check-icon">✓</span> Alert "Kelas Kosong" untuk Guru Piket</li>
+                <li><span class="check-icon">✓</span> Rekapitulasi Jurnal Mengajar Digital</li>
+            </ul>
+        </div>
+
+        <div class="section-title">Pengembang</div>
+        <div class="dev-card">
+            <div style="font-size:12px; color:#666;">Dikembangkan sebagai<br>Proyek Tugas Akhir oleh:</div>
+            <div class="dev-name">[Nama Lengkap Anda]</div>
+            <div class="dev-nim">NIM. XXXXXXXXXX</div>
+            <div style="font-size:12px; color:#0056b3; margin-top:5px;">Teknik Informatika</div>
+        </div>
+
+        <div class="footer-copy">
+            &copy; 2025 SMPN 2 Prigen. All rights reserved.<br>
+            Made with ❤️ in Prigen.
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

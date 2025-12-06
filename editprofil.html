@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Saya - SMPN 2 Prigen</title>
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; }
+        .mobile-container { max-width: 480px; margin: 0 auto; background: white; min-height: 100vh; position: relative; box-shadow: 0 0 15px rgba(0,0,0,0.1); }
+
+        /* HEADER */
+        .header {
+            background: white; padding: 15px 20px; 
+            border-bottom: 1px solid #eee; display: flex; align-items: center; gap: 15px;
+            position: sticky; top: 0; z-index: 10;
+        }
+        .back-btn { font-size: 24px; cursor: pointer; text-decoration: none; color: #333; }
+        .header h2 { margin: 0; font-size: 18px; color: #333; }
+
+        /* CONTENT */
+        .content { padding: 20px 20px 80px; }
+
+        /* PROFILE PICTURE SECTION */
+        .profile-section { text-align: center; margin-bottom: 30px; position: relative; }
+        .avatar-container { 
+            position: relative; width: 100px; height: 100px; margin: 0 auto; 
+        }
+        .avatar {
+            width: 100px; height: 100px; border-radius: 50%; object-fit: cover;
+            border: 3px solid #0056b3; padding: 2px; background: white;
+        }
+        .edit-icon {
+            position: absolute; bottom: 0; right: 0;
+            background: #0056b3; color: white; width: 30px; height: 30px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 14px; border: 2px solid white; cursor: pointer;
+        }
+
+        /* FORM */
+        .form-group { margin-bottom: 20px; }
+        label { display: block; font-weight: 600; font-size: 13px; color: #666; margin-bottom: 8px; }
+        
+        input {
+            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px;
+            font-family: inherit; font-size: 14px; box-sizing: border-box;
+            transition: 0.3s;
+        }
+        input:focus { border-color: #0056b3; outline: none; }
+        
+        /* Readonly style */
+        input:read-only { 
+            background-color: #e9ecef; color: #495057; border-color: #ced4da; cursor: not-allowed;
+        }
+        .helper-text { font-size: 11px; color: #dc3545; margin-top: 4px; display: none; }
+        input:read-only:focus + .helper-text { display: block; }
+
+        /* BUTTONS */
+        .btn-save {
+            width: 100%; background: #0056b3; color: white; border: none;
+            padding: 14px; border-radius: 8px; font-weight: bold; font-size: 15px; cursor: pointer;
+            margin-top: 10px;
+        }
+        .btn-outline {
+            width: 100%; background: white; color: #0056b3; border: 1px solid #0056b3;
+            padding: 12px; border-radius: 8px; font-weight: bold; font-size: 14px; cursor: pointer;
+            margin-top: 10px;
+        }
+        .btn-logout {
+            width: 100%; background: #fee2e2; color: #dc3545; border: none;
+            padding: 14px; border-radius: 8px; font-weight: bold; font-size: 15px; cursor: pointer;
+            margin-top: 30px;
+        }
+
+        /* BOTTOM NAV */
+        .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid #ddd; display: flex; justify-content: space-around; padding: 10px 0; max-width: 480px; margin: 0 auto; z-index: 20; }
+        .nav-item { text-align: center; color: #999; font-size: 10px; cursor: pointer; }
+        .nav-item.active { color: #0056b3; font-weight: bold; }
+        .nav-icon { font-size: 20px; display: block; margin-bottom: 3px; }
+
+        /* --- MODAL PASSWORD --- */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.5); z-index: 50;
+            display: none; justify-content: center; align-items: center; padding: 20px;
+        }
+        .modal-box {
+            background: white; width: 100%; max-width: 400px;
+            border-radius: 15px; padding: 25px; box-sizing: border-box;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .modal-title { font-size: 18px; font-weight: bold; margin-bottom: 20px; color: #333; }
+        .modal-actions { display: flex; gap: 10px; margin-top: 20px; }
+        .btn-cancel { background: #f0f2f5; color: #333; }
+        .btn-confirm { background: #0056b3; color: white; }
+        .modal-btn { flex: 1; padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; }
+
+    </style>
+</head>
+<body>
+
+<div class="mobile-container">
+    
+    <div class="header">
+        <a href="javascript:history.back()" class="back-btn">←</a> 
+        <h2>Profil Saya</h2>
+    </div>
+
+    <div class="content">
+        
+        <div class="profile-section">
+            <div class="avatar-container" onclick="alert('Membuka Galeri Foto untuk ganti profil...')">
+                <img src="https://ui-avatars.com/api/?name=Pak+Budi&background=0D8ABC&color=fff&size=128" class="avatar" alt="Foto Profil">
+                <div class="edit-icon">📷</div>
+            </div>
+            <h3 style="margin: 10px 0 5px;">Pak Budi, S.Pd.</h3>
+            <p style="margin:0; font-size:13px; color:#666;">Guru Matematika</p>
+        </div>
+
+        <form>
+            <div class="form-group">
+                <label>Nomor Induk Pegawai (NIP)</label>
+                <input type="text" value="19850101 201001 1 001" readonly>
+                <div class="helper-text">🔒 Data NIP dikunci oleh Admin.</div>
+            </div>
+
+            <div class="form-group">
+                <label>Nama Lengkap</label>
+                <input type="text" value="Budi Santoso, S.Pd." readonly>
+                <div class="helper-text">🔒 Data Nama dikunci sesuai Dapodik.</div>
+            </div>
+
+            <div class="form-group">
+                <label>Nomor WhatsApp (Aktif)</label>
+                <input type="text" value="0812-3456-7890">
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" value="budi.santoso@smpn2prigen.sch.id">
+            </div>
+
+            <button type="button" class="btn-save" onclick="simpanProfil()">💾 Simpan Perubahan</button>
+            
+            <button type="button" class="btn-outline" onclick="bukaModalPass()">🔑 Ganti Password</button>
+
+            <button type="button" class="btn-logout" onclick="logout()">🚪 Keluar Aplikasi</button>
+        </form>
+
+    </div>
+
+    <div class="bottom-nav">
+        <div class="nav-item" onclick="window.location.href='dashboard_guru.html'">
+            <span class="nav-icon">🏠</span> Beranda
+        </div>
+        <div class="nav-item" onclick="window.location.href='guru_riwayat.html'">
+            <span class="nav-icon">📜</span> Riwayat
+        </div>
+        <div class="nav-item active">
+            <span class="nav-icon">👤</span> Profil
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="passwordModal">
+        <div class="modal-box">
+            <div class="modal-title">Ganti Password</div>
+            
+            <div class="form-group">
+                <label>Password Lama</label>
+                <input type="password" id="passLama" placeholder="Masukkan password saat ini">
+            </div>
+
+            <div class="form-group">
+                <label>Password Baru</label>
+                <input type="password" id="passBaru" placeholder="Minimal 6 karakter">
+            </div>
+
+            <div class="form-group">
+                <label>Konfirmasi Password Baru</label>
+                <input type="password" id="passKonfirm" placeholder="Ulangi password baru">
+            </div>
+
+            <div class="modal-actions">
+                <button class="modal-btn btn-cancel" onclick="tutupModalPass()">Batal</button>
+                <button class="modal-btn btn-confirm" onclick="simpanPassword()">Simpan</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // --- Logika Profil ---
+    function simpanProfil() {
+        const btn = document.querySelector('.btn-save');
+        const originalText = btn.innerText;
+        btn.innerText = "⏳ Menyimpan...";
+        btn.style.opacity = "0.7";
+        
+        setTimeout(() => {
+            alert("Berhasil! Data kontak Anda telah diperbarui.");
+            btn.innerText = originalText;
+            btn.style.opacity = "1";
+        }, 1000);
+    }
+
+    function logout() {
+        if(confirm("Yakin ingin keluar dari akun?")) {
+            window.location.href = "login_guru.html";
+        }
+    }
+
+    // --- Logika Modal Password ---
+    function bukaModalPass() {
+        // Reset form dulu
+        document.getElementById('passLama').value = '';
+        document.getElementById('passBaru').value = '';
+        document.getElementById('passKonfirm').value = '';
+        // Tampilkan modal
+        document.getElementById('passwordModal').style.display = 'flex';
+    }
+
+    function tutupModalPass() {
+        document.getElementById('passwordModal').style.display = 'none';
+    }
+
+    function simpanPassword() {
+        const lama = document.getElementById('passLama').value;
+        const baru = document.getElementById('passBaru').value;
+        const konfirm = document.getElementById('passKonfirm').value;
+
+        // Validasi Sederhana
+        if(lama === "") {
+            alert("Harap masukkan Password Lama!");
+            return;
+        }
+        if(baru.length < 6) {
+            alert("Password Baru minimal 6 karakter!");
+            return;
+        }
+        if(baru !== konfirm) {
+            alert("Konfirmasi Password tidak cocok!");
+            return;
+        }
+
+        // Simulasi Sukses
+        alert("Berhasil! Password Anda telah diubah.\nSilakan login ulang dengan password baru.");
+        tutupModalPass();
+    }
+</script>
+
+</body>
+</html>
